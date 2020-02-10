@@ -7,14 +7,14 @@
 Переходим в каталог исходных кодов ядер, скачиваем и распаковываем свежую версию:
 ```
     cd /usr/src/kernels
-    wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.5.2.tar.xz
+    sudo wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.5.2.tar.xz
     sudo tar -xvf linux-5.5.2.tar.xz
 ```
 Создаём стандартный конфиг для сборки ядра CentOS:
 ```
     cd linux-5.5.2/
     sudo cp -v /boot/config-3.10.0-1062.9.1.el7.x86_64 .config
-    make menuconfig
+    sudo make menuconfig
 ```
 Приступаем с сборке:
 ```

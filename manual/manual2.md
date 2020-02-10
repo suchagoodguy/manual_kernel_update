@@ -44,16 +44,7 @@
 
 Первым делом нужно установить плагин к Vagrant:
 ```
-    vagrant plugin install vagrant-scp
-```
-Затем переслать в ВМ установщик гостевых дополнений VirtualBox:
-```
-    vagrant scp VBoxLinuxAdditions.run kernel-update:/home/vagrant
-```
-В ВМ собираем модули ядра и выключаем:
-```
-    sudo ./VBoxLinuxAdditions.run
-    sudo poweroff
+    vagrant plugin install vagrant-vbguest
 ```
 Редактируем Vagrantfile, добавляем строку, где test -- название общего ресурса:
 ```
@@ -67,7 +58,8 @@
 ```
 Запускаем ВМ и монтируем общий ресурс:
 ```
-    mkdir /mnt/test; mount -t vboxsf test /mnt/test
+    vagrant up; vagrant ssh
+    sudo mkdir /mnt/test && sudo mount -t vboxsf test /mnt/test
 ```
 Проверяем содержимое:
 ```

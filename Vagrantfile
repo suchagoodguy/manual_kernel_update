@@ -3,7 +3,7 @@ MACHINES = {
   # VM name "kernel update"
   :"kernel-update" => {
               # VM box
-              :box_name => "centos/7",
+              :box_name => "suchagoodguy/centos-7-55",
               # VM CPU count
               :cpus => 2,
               # VM RAM size (Mb)
@@ -41,6 +41,7 @@ Vagrant.configure("2") do |config|
         # Set VM RAM size and CPU count
         v.memory = boxconfig[:memory]
         v.cpus = boxconfig[:cpus]
+        v.customize ["sharedfolder", "add", :id, "--name", "test", "--hostpath", "~/test", "--automount"]
       end
     end
   end

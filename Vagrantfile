@@ -3,7 +3,8 @@ MACHINES = {
   # VM name "kernel update"
   :"kernel-update" => {
               # VM box
-              :box_name => "suchagoodguy/centos-7-55",
+              :box_name => "suchagoodguy/centos7-55",
+              :box_url => "https://app.vagrantup.com/suchagoodguy/boxes/centos7-55",
               # VM CPU count
               :cpus => 2,
               # VM RAM size (Mb)
